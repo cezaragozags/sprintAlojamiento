@@ -1,0 +1,27 @@
+app-navbar {
+   width: 100%;
+   display: flex;
+   background-color: black;
+}
+
+app-principalbar {
+    width: 100%;
+    display: flex;
+    background-color: #F5F5F5;
+}
+
+.main-container {
+    display: flex;
+}
+
+app-estancias {
+    display: flex;
+}
+
+app-rules {
+    display: flex;
+}
+
+app-footer {
+    display: flex;
+}

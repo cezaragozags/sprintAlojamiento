@@ -1,0 +1,61 @@
+<div class="reservacion">
+  <!-- Imagen Principal y Miniaturas -->
+  <div class="imagenes">
+    <img
+      class="imagen-principal"
+      [src]="img4"
+      alt="Casa en renta"
+    />
+
+    <!--Property Binding [src] asigna valores a los atributos-->
+    <div class="miniaturas">
+      <img [src]="img1" alt="Miniatura 1" (click)="show(1)"/> 
+      <img [src]="img2" alt="Miniatura 2" (click)="show(2)"/>
+      <img [src]="img3" alt="Miniatura 3" (click)="show(3)"/>
+    </div>
+  </div>
+
+  <!-- Sección de Reserva -->
+  <div class="reserva-box">
+    <div class="controles">
+      <span class="titulo">Huéspedes</span>
+      <div class="botones">
+        <!--Event Binding se usa con parentesis como (click, input, change)-->
+        <button (click)="sumHuespedes(false)">-</button>
+        <!--Interpolacion se usa con dobles {{numHuespedes}} llaves y permite mostrar variables, propiedades y expresiones en la vista-->
+        <span> {{numHuespedes}} </span> 
+        <button (click)="sumHuespedes(true)">+</button>
+      </div>
+    </div>
+
+    <div class="controles">
+      <span class="titulo">Noches</span>
+      <div class="botones">
+        <button (click)="sumNoches(false)">-</button>
+        <span> {{numNoches}} </span>
+        <button (click)="sumNoches(true)">+</button>
+      </div>
+    </div>
+    
+    <hr />
+
+    <h3>Extras</h3>
+    <ul class="extras">
+      <!--Double Binding sincronizar automaticamente una variable de TS con un elemento HTML se usa con [(ngModel)] no lo supe usar-->
+      <li><input type="checkbox" (click)="onSelectExtra('mascota')"/> + Mascota $250.00 MXN</li>
+      <li><input type="checkbox" (click)="onSelectExtra('calefaccion')"/> + Calefacción $500 MXN</li>
+      <li><input type="checkbox" (click)="onSelectExtra('montana')"/> + Ruta de Montaña $150 MXN</li>
+      <li><input type="checkbox" (click)="onSelectExtra('senderismo')"/> + Senderismo $200 MXN</li>
+      <li><input type="checkbox" (click)="onSelectExtra('cascada')"/> + Visita a la Cascada $50 MXN</li>
+    </ul>
+
+    <hr />
+
+    <div class="total">
+      <span>Total con impuestos</span>
+      <strong>$ {{calcularTotal()}} MXN</strong>
+    </div>
+
+    <button class="reservar-btn">Reservar</button>
+  </div>
+</div>
